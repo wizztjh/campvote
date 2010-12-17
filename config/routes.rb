@@ -1,9 +1,11 @@
 Campvote::Application.routes.draw do
+  resources :timetables
+
    devise_for :users, :path => "wakaka", :path_names => { :sign_in => 'login', :sign_out => 'logout'}
   devise_scope :user do
     get "login", :to => "devise/sessions#new"
     get "logout", :to => "devise/sessions#destroy"
-    #get "register", :to => "devise/registrations#create"
+    get "register", :to => "devise/registrations#create"
   end
   resources :voters
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101217091549) do
+ActiveRecord::Schema.define(:version => 20101217142138) do
 
   create_table "barcamp_sessions", :force => true do |t|
     t.string   "hash_tag"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(:version => 20101217091549) do
     t.string   "email"
     t.string   "handphone"
     t.string   "since"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
+  end
+
+  create_table "timetables", :force => true do |t|
+    t.datetime "from"
+    t.datetime "to"
+    t.integer  "barcamp_session_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

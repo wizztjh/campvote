@@ -1,0 +1,27 @@
+<h1>Listing timetables</h1>
+
+<table>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Barcamp session</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @timetables.each do |timetable| %>
+  <tr>
+    <td><%= timetable.from %></td>
+    <td><%= timetable.to %></td>
+    <td><%= timetable.barcamp_session_id %></td>
+    <td><%= link_to 'Show', timetable %></td>
+    <td><%= link_to 'Edit', edit_timetable_path(timetable) %></td>
+    <td><%= link_to 'Destroy', timetable, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Timetable', new_timetable_path %>

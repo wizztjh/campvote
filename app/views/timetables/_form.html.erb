@@ -1,0 +1,30 @@
+<%= form_for(@timetable) do |f| %>
+  <% if @timetable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@timetable.errors.count, "error") %> prohibited this timetable from being saved:</h2>
+
+      <ul>
+      <% @timetable.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :from %><br />
+    <%= f.datetime_select :from %>
+  </div>
+  <div class="field">
+    <%= f.label :to %><br />
+    <%= f.datetime_select :to %>
+  </div>
+  <div class="field">
+    <%= f.label :barcamp_session_id %><br />
+    <%= f.collection_select(:timetable ,:barcamp_session_id, BarcampSession.all, :id, :name_with_initial) %>
+    <%= f.text_field :barcamp_session_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -16,8 +16,12 @@
     <%= f.text_field :hash_tag %>
   </div>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :tweeter_name %><br />
     <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
@@ -27,6 +31,7 @@
     <%= f.label :handphone %><br />
     <%= f.text_field :handphone %>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
