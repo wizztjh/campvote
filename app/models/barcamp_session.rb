@@ -1,7 +1,7 @@
 require 'twitter'
 class BarcampSession < ActiveRecord::Base
     has_many :voters
-	validates :hash_tag , :format => {:with => /^#\w+/ } , :presence => true ,:uniqueness => true
+	validates :hash_tag , :format => {:with => /^#\w+$/ } , :presence => true ,:uniqueness => true
 	validates :name , :presence => true 
 	validates :email , :presence => true , :format => {:with => /((\S+)@(\S{3}[a-zA-z0-9)]\S*))/ }
 	validates :handphone, :presence => true 

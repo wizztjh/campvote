@@ -21,8 +21,8 @@
   </div>
   <div class="field">
     <%= f.label :barcamp_session_id %><br />
-    <%= f.collection_select(:timetable ,:barcamp_session_id, BarcampSession.all, :id, :name_with_initial) %>
-    <%= f.text_field :barcamp_session_id %>
+    <%= f.select("timetable", "barcamp_session_id", BarcampSession.all.collect {|p| [ p.name, p.id ] }, { :include_blank => true }) %>
+    
   </div>
   <div class="actions">
     <%= f.submit %>
