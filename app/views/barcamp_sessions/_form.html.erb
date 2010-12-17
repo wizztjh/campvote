@@ -1,0 +1,33 @@
+<%= form_for(@barcamp_session) do |f| %>
+  <% if @barcamp_session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@barcamp_session.errors.count, "error") %> prohibited this barcamp_session from being saved:</h2>
+
+      <ul>
+      <% @barcamp_session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hash_tag %><br />
+    <%= f.text_field :hash_tag %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :handphone %><br />
+    <%= f.text_field :handphone %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

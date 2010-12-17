@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Hash tag:</b>
+  <%= @barcamp_session.hash_tag %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @barcamp_session.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @barcamp_session.email %>
+</p>
+
+<p>
+  <b>Handphone:</b>
+  <%= @barcamp_session.handphone %>
+</p>
+
+
+<%= link_to 'Edit', edit_barcamp_session_path(@barcamp_session) %> |
+<%= link_to 'Back', barcamp_sessions_path %>

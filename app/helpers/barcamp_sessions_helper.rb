@@ -1,0 +1,2 @@
+module BarcampSessionsHelper
+end

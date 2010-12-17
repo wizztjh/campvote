@@ -1,0 +1,35 @@
+<h1>Listing barcamp_sessions</h1>
+
+<table>
+  <tr>
+    <th>Hash tag</th>
+     <th>Count</th>
+    <% if user_signed_in? %>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Handphone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <% end %>
+  </tr>
+
+<% @barcamp_sessions.each do |barcamp_session| %>
+  <tr>
+    <td><%= barcamp_session.hash_tag %></td>
+    <td><%= barcamp_session.voters.count %></td>
+     <% if user_signed_in? %>
+    <td><%= barcamp_session.name %></td>
+    <td><%= barcamp_session.email %></td>
+    <td><%= barcamp_session.handphone %></td>
+    <td><%= link_to 'Show', barcamp_session %></td>
+    <td><%= link_to 'Edit', edit_barcamp_session_path(barcamp_session) %></td>
+    <td><%= link_to 'Destroy', barcamp_session, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Barcamp session', new_barcamp_session_path if user_signed_in? %>
